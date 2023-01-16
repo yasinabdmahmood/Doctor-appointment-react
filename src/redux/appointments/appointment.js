@@ -1,7 +1,8 @@
 const ADD_APP = 'doctorApp/appointments/ADD_APPOINTMENT';
 const FETCH_APP = 'doctorApp/appointments/FETCH_APPOINTMENT';
+const initial = [];
 
-const appointmentReducer = (state = intial, action) => {
+const appointmentReducer = (state = initial, action) => {
   switch (action.type) {
     case FETCH_APP:
       return [
@@ -12,12 +13,11 @@ const appointmentReducer = (state = intial, action) => {
       return [
         ...state,
         action.payload,
-      ]
+      ];
 
     default:
       return state;
   }
-
 };
 
 export const fetchApp = (appointments) => ({
@@ -40,15 +40,14 @@ export const addAppThunk = (appointment) => (dispatch) => fetch('appointmentsURL
   {
     method: 'POST',
     body: JSON.stringify({
-      appointment
+      appointment,
     }),
     headers: {
       'Content-Type': 'application/json',
     },
-  }
-)
-.then(() => {
-  dispatch(addApp(appointment));
-});
+  })
+  .then(() => {
+    dispatch(addApp(appointment));
+  });
 
 export default appointmentReducer;
