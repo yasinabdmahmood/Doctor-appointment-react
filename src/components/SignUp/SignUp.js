@@ -39,7 +39,8 @@ const SignUp = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label>Name:
+        <label>
+          Name:
           <input
             type="text"
             value={name}
