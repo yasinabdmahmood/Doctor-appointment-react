@@ -1,11 +1,11 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { reserveAppointment } from '../redux/actions/reservationsActions';
 
-const ReserveForm = () => (
-  <h1>Reserve Form </h1>
-);
+function ReserveForm() {
+  return (
+    <div>
+      <h1>Reservation form</h1>
+    </div>
+  );
+}
 
 export default ReserveForm;
