@@ -19,7 +19,8 @@
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
     "no-shadow": "off",
-    "linebreak-style": "off"
+    "linebreak-style": "off",
+    "jsx-a11y/label-has-associated-control": "off"
   },
   "ignorePatterns": [
     "dist/",
