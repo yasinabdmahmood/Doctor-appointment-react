@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DeleteDoctorForm(props) {
+function DeleteDoctorForm() {
   return (
     <div>
       <h1>Delete Doctor</h1>
