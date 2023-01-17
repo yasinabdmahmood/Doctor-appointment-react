@@ -52,7 +52,7 @@ function LogIn() {
         <br />
         <button type="submit">Log in</button>
       </form>
-      <button type="submit"><Link to="/signup">SignUp</Link></button>
+      <Link to="/signup" type="button" className="btn btn-primary">SignUp</Link>
     </>
   );
 }
