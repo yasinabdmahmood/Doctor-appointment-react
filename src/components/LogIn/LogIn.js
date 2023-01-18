@@ -1,6 +1,9 @@
+/* eslint-disable no-console */
+/* eslint-disable import/no-extraneous-dependencies */
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './LogIn.css';
 
 function LogIn() {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -29,7 +32,7 @@ function LogIn() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="login-form" onSubmit={handleSubmit}>
         <label>
           Email:
           <input
