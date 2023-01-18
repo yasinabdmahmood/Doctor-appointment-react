@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import Navigation from './components/Navigation';
+import Navigation from './components/Navigation/Navigation';
 import DoctorsList from './components/DoctorsList/DoctorsList';
 import DoctorDetails from './components/DoctorDetails/DoctorDetails';
 import ReserveForm from './components/Reserve/ReserveForm';
@@ -15,14 +15,15 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!sessionStorage.getItem('token')) {
+    const token = sessionStorage.getItem('token');
+    if (!token) {
       navigate('/login');
     }
   }, []);
 
   return (
     <>
-      <Navigation />
+      {sessionStorage.getItem('token') ? <Navigation /> : null}
       <Routes>
         <Route path="/" exact element={<DoctorsList />} />
         <Route path="/doctors" element={<DoctorDetails />} />
@@ -33,7 +34,6 @@ function App() {
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
-
     </>
   );
 }
