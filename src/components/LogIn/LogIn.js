@@ -2,12 +2,15 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import {fetchDocThunk} from '../../redux/doctors/doctor'
+import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import './LogIn.css';
 
 function LogIn() {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
   const handleChange = (event) => {
     setFormData({
@@ -23,6 +26,7 @@ function LogIn() {
       .then((response) => {
         sessionStorage.setItem('token', response.data.token);
         sessionStorage.setItem('isAdmin', response.data.isAdmin);
+        dispatch(fetchDocThunk())
         navigate('/');
       })
       .catch((error) => {

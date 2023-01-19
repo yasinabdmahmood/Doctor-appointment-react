@@ -1,8 +1,10 @@
 // import './App.css';
-import React, { useReducer, useState } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 // import { DatePicker } from 'react-datepicker';
 // import "react-datepicker/dist/react-datepicker.css";
 import { useSelector } from 'react-redux';
+import {fetchDocThunk, addDocThunk} from '../../redux/doctors/doctor'
+import { useDispatch } from 'react-redux';
 
 const formReducer = (state, event) => ({
   ...state,
@@ -12,11 +14,17 @@ const formReducer = (state, event) => ({
 function ReserveForm() {
   const [formData, setFormData] = useReducer(formReducer, {});
   const [submitting, setSubmitting] = useState(false);
-  const doctors = useSelector(state =>
-      state.doctors 
-    )
+  const doctors = useSelector(state => state.doctors )
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    dispatch(fetchDocThunk())
+  },[])
   const handleSubmit = (event) => {
     event.preventDefault();
+    const doctor = {
+      name: 'doctor.name', picture: 'doctor.picture', speciality: 'doctor.speciality', bio: 'doctor.bio',
+    }
+    dispatch(addDocThunk(doctor))
     setSubmitting(true);
     setTimeout(() => {
       setSubmitting(false);
@@ -32,7 +40,7 @@ function ReserveForm() {
 
   const startDate = new Date();
   return (
-    <div className="wrapper">
+    <div className="wrapper" style={{position: 'absolute', right: '0px'}}>
       <h1>Reserve Doctors Appointment</h1>
       {submitting
        && (
@@ -49,7 +57,7 @@ function ReserveForm() {
          </ul>
        </div>
        )}
-      <form onSubmit={handleSubmit} style="position:absolute; right:0px;">
+      <form onSubmit={handleSubmit} >
         <fieldset>
           <label>
             <p>City</p>
@@ -58,8 +66,10 @@ function ReserveForm() {
           <label>
             <p>Doctor</p>
             <select name="doctor" onChange={handleChange}>
-              {doctors.map(doctor=>
-                <option value={doctor.id} key={doctor.id}>{doctor.name}</option>
+              {doctors.map(doctor=> {
+                return <option value={doctor.id} key={doctor.id}>{doctor.name}</option>
+              }
+                
               )}
             </select>
           </label>
