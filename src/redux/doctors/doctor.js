@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import axios from 'axios';
 
 const ADD_DOC = 'doctorApp/doctors/ADD_DOCTOR';
