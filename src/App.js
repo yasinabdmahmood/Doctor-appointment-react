@@ -24,11 +24,11 @@ function App() {
 
   return (
     <>
+      {sessionStorage.getItem('token') ? <Navigation /> : null}
       <div className="main-container">
-        {sessionStorage.getItem('token') ? <Navigation /> : null}
         <Routes>
           <Route path="/" exact element={<DoctorsList />} />
-          <Route path="/doctors" element={<DoctorDetails />} />
+          <Route path="/doctors/:id" element={<DoctorDetails />} />
           <Route path="/reserve" element={<ReserveForm />} />
           <Route path="/my-reservations" element={<MyReservations />} />
           <Route path="/add-doctor" element={<AddDoctorForm />} />
