@@ -1,0 +1,56 @@
+.doctor-details-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.doctor-thumbnail-container {
+  width: 30%;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.doctor-thumbnail {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.doctor-info {
+  width: 70%;
+}
+
+.doctor-name {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.doctor-speciality {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.doctor-bio {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .doctor-details-container {
+    flex-wrap: wrap;
+  }
+
+  .doctor-thumbnail-container {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .doctor-info {
+    width: 100%;
+  }
+}

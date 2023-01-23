@@ -1,5 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-use-before-define */
 import React, { useState, useEffect } from 'react';
 import * as FaIcons from 'react-icons/fa';
@@ -10,7 +10,6 @@ import logo from '../../assets/images/logo.png';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -21,33 +20,33 @@ const Navigation = () => {
   const handleResize = () => {
     setWidth(window.innerWidth);
     if (width <= 600) {
-      setIsSidebarOpen(false);
-    } else {
       setIsOpen(false);
     }
   };
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter' || event.key === ' ') {
-      setIsSidebarOpen(!isSidebarOpen);
+      setIsOpen(!isOpen);
     }
   };
 
   return (
-    <div className={`sidebar ${isOpen ? 'open' : ''} ${isSidebarOpen ? 'open' : ''}`}>
+    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
       <img src={logo} alt="Logo" className="logo" />
-      <div
-        role="button"
-        aria-label="Open sidebar menu"
-        className={`hamburger-menu ${width <= 600 ? 'open' : ''}`}
-        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        onKeyPress={handleKeyPress}
-      >
-        <span />
-        <span />
-        <span />
-      </div>
-      <ul className={`sidebar-nav ${isOpen ? 'open' : ''} ${isSidebarOpen ? 'open' : ''}`}>
+      {width <= 600 && (
+        <div
+          role="button"
+          aria-label="Open hamburger menu"
+          className={`hamburger-menu ${isOpen ? 'open' : ''}`}
+          onClick={() => setIsOpen(!isOpen)}
+          onKeyPress={handleKeyPress}
+        >
+          <span />
+          <span />
+          <span />
+        </div>
+      )}
+      <ul className={`sidebar-nav ${isOpen ? 'open' : ''}`}>
         <li className="nav-item"><Link to="/doctors">Doctors</Link></li>
         <li className="nav-item"><Link to="/reserve">Reserve</Link></li>
         <li className="nav-item"><Link to="/my-reservations">My Reservations</Link></li>
@@ -87,8 +86,10 @@ const Navigation = () => {
             </li>
           </ul>
         </IconContext.Provider>
-        <p className="fw-light mt-3 text-center">
-          &copy; 2023, Doctor Appointment.
+        <p className="fw-light">
+          Copyright ©
+          {' '}
+          {new Date().getFullYear()}
         </p>
       </div>
     </div>
