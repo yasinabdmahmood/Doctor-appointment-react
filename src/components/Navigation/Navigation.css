@@ -29,11 +29,11 @@
 
 @media (max-width: 600px) {
   .sidebar {
-      width: 80%;
+    width: 80%;
   }
 
   .hamburger-menu {
-      display: block;
+    display: block;
   }
 }
 
