@@ -4,7 +4,8 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import Navigation from './components/Navigation/Navigation';
 import DoctorsList from './components/DoctorsList/DoctorsList';
 import DoctorDetails from './components/DoctorDetails/DoctorDetails';
-import ReserveForm from './components/Reserve/ReserveForm';
+// import ReserveForm from './components/Reserve/ReserveForm';
+import Home from './components/Reserve/Home';
 import MyReservations from './components/MyReservations/MyReservations';
 import AddDoctorForm from './components/AddDoctor/AddDoctorForm';
 import DeleteDoctorForm from './components/DeleteDoctor/DeleteDoctorForm';
@@ -27,7 +28,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<DoctorsList />} />
         <Route path="/doctors" element={<DoctorDetails />} />
-        <Route path="/reserve" element={<ReserveForm />} />
+        <Route path="/reserve" element={<Home />} />
         <Route path="/my-reservations" element={<MyReservations />} />
         <Route path="/add-doctor" element={<AddDoctorForm />} />
         <Route path="/delete-doctor" element={<DeleteDoctorForm />} />

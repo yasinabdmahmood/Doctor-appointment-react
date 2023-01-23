@@ -40,7 +40,7 @@ function ReserveForm() {
 
   const startDate = new Date();
   return (
-    <div className="wrapper" style={{position: 'absolute', right: '0px'}}>
+    <div className="wrapper" style={{position: 'absolute', right: '40px'}}>
       <h1>Reserve Doctors Appointment</h1>
       {submitting
        && (
