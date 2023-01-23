@@ -1,13 +1,10 @@
-/* eslint-disable import/no-duplicates */
-/* eslint-disable max-len */
-/* eslint-disable no-unused-vars */
-// import './App.css';
+
 import React, { useEffect, useReducer, useState } from 'react';
 // import { DatePicker } from 'react-datepicker';
 // import "react-datepicker/dist/react-datepicker.css";
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { fetchDocThunk, addDocThunk } from '../../redux/doctors/doctor';
+
 
 const formReducer = (state, event) => ({
   ...state,
