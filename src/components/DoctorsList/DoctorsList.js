@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { fetchDocThunk } from '../../redux/doctors/doctor';
 
 const DoctorsList = () => {
@@ -21,10 +22,12 @@ const DoctorsList = () => {
       <div className="row px-5 py-5">
         {doctors.map((doctor) => (
           <div className="col-lg-4" key={doctor.id}>
-            <img className="rounded-circle" src={doctor.picture} alt="Doctor" width="140" height="140" />
-            <h2>{doctor.name}</h2>
-            <p>{doctor.speciality}</p>
-            <p>{doctor.bio}</p>
+            <NavLink to="/doctors/:id">
+              <img className="rounded-circle" src={doctor.picture} alt="Doctor" width="140" height="140" />
+              <h2>{doctor.name}</h2>
+              <p>{doctor.speciality}</p>
+              <p>{doctor.bio}</p>
+            </NavLink>
           </div>
         ))}
       </div>
