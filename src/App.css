@@ -44,6 +44,6 @@
 
 @media screen and (max-width: 768px) {
   .main-container {
-    margin-left: 0px;
+    margin-left: 0;
   }
 }
