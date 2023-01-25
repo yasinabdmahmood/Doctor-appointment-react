@@ -1,50 +1,49 @@
-import React, { useEffect, useReducer, useState } from 'react';
-import DatePicker from 'react-datepicker';
+import React, { useEffect, useState } from 'react';
+// import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { addAppThunk } from '../../redux/appointments/appointment';
 import { fetchDocThunk } from '../../redux/doctors/doctor';
 import './ReserveForm.css';
 
-const formReducer = (state, event) => ({
-  ...state,
-  [event.name]: event.value,
-});
+// const formReducer = (state, event) => ({
+//   ...state,
+//   [event.name]: event.value,
+// });
 
 const ReserveForm = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const doctors = useSelector((state) => state.doctors);
   const [formData, setFormData] = useState({
     city: '',
     doctor_id: 1,
-    date: ''
+    date: '',
   });
 
   const handleChange = (event) => {
     setFormData({
       ...formData,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
-  }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(addAppThunk(formData))
-    navigate('/my-reservations')
-  }
+    dispatch(addAppThunk(formData));
+    navigate('/my-reservations');
+  };
 
-  const [submitting, setSubmitting] = useState(false);
-  
-  const dispatch = useDispatch();
+  const [submitting] = useState(false);
+
   useEffect(() => {
     dispatch(fetchDocThunk());
   }, []);
-  
 
-  const [startDate] = useState(new Date());
+  // const startDate = new Date();
   return (
-    <div className="wrapper">
+    <div className="wrapper" style={{ position: 'absolute', right: '40px' }}>
       <h1>Reserve Doctors Appointment</h1>
       {submitting
        && (
@@ -83,7 +82,7 @@ const ReserveForm = () => {
           <label>
             <p>Date</p>
             <div>
-            <input type="date" name="date" value={formData.date} onChange={handleChange} />
+              <input type="date" name="date" value={formData.date} onChange={handleChange} />
             </div>
           </label>
         </fieldset>

@@ -47,7 +47,7 @@ const Navigation = () => {
         </div>
       )}
       <ul className={`sidebar-nav ${isOpen ? 'open' : ''}`}>
-        <li className="nav-item"><Link to="/doctors">Doctors</Link></li>
+        <li className="nav-item"><Link to="/">Doctors</Link></li>
         <li className="nav-item"><Link to="/reserve">Reserve</Link></li>
         <li className="nav-item"><Link to="/my-reservations">My Reservations</Link></li>
         <li className="nav-item"><Link to="/add-doctor">Add Doctor</Link></li>
