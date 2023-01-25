@@ -26,7 +26,6 @@ function LogIn() {
       .then((response) => {
         sessionStorage.setItem('token', response.data.token);
         sessionStorage.setItem('isAdmin', response.data.isAdmin);
-        dispatch(fetchDocThunk());
         navigate('/');
       })
       .catch((error) => {
