@@ -22,7 +22,7 @@ const DoctorsList = () => {
       <div className="row px-5 py-5">
         {doctors.map((doctor) => (
           <div className="col-lg-4" key={doctor.id}>
-            <NavLink to="/doctors/:id">
+            <NavLink to={`/doctors/${doctor.id}`} className="doctor-card">
               <img className="rounded-circle" src={doctor.picture} alt="Doctor" width="140" height="140" />
               <h2>{doctor.name}</h2>
               <p>{doctor.speciality}</p>

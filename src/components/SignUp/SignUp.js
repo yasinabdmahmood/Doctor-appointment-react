@@ -40,48 +40,21 @@ const SignUp = () => {
   };
 
   return (
-    <>
-      <form className="signup-form" onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
-          Username:
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <br />
+    <div className="signup-container">
+      <form onSubmit={handleSubmit}>
+        <h1>Sign Up</h1>
+        <input type="text" placeholder="Full Name" required value={name} onChange={(e) => setName(e.target.value)} />
+        <input type="text" placeholder="Username" required value={username} onChange={(e) => setUsername(e.target.value)} />
+        <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)} />
         <button type="submit">Sign Up</button>
+        <p>
+          Already have an account?
+          {' '}
+          <Link to="/login">Log In</Link>
+        </p>
       </form>
-      <Link className="btn btn-primary" to="/login">Login</Link>
-    </>
+    </div>
   );
 };
 

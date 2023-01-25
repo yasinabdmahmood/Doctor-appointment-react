@@ -1,0 +1,36 @@
+.delete-doctor-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.delete-doctor-form h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.delete-doctor-form ul {
+  list-style: none;
+  width: 100%;
+}
+
+.delete-doctor-form li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+}
+
+.delete-doctor-form button {
+  padding: 10px 20px;
+  background-color: #f00;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+}
