@@ -1,16 +1,15 @@
 import React, { useEffect, useReducer, useState } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+// import { DatePicker } from 'react-datepicker';
+// import "react-datepicker/dist/react-datepicker.css";
 import { useSelector, useDispatch } from 'react-redux';
-import { addAppThunk } from '../../redux/appointments/appointment';
-import './ReserveForm.css';
+import { addDocThunk, fetchDocThunk } from '../../redux/doctors/doctor';
 
 const formReducer = (state, event) => ({
   ...state,
   [event.name]: event.value,
 });
 
-const ReserveForm = () => {
+function ReserveForm() {
   const [formData, setFormData] = useReducer(formReducer, {});
   const [submitting, setSubmitting] = useState(false);
   const doctors = useSelector((state) => state.doctors);
@@ -37,9 +36,9 @@ const ReserveForm = () => {
     });
   };
 
-  const [startDate] = useState(new Date());
+  // const startDate = new Date();
   return (
-    <div className="wrapper">
+    <div className="wrapper" style={{ position: 'absolute', right: '40px' }}>
       <h1>Reserve Doctors Appointment</h1>
       {submitting
        && (
@@ -75,21 +74,10 @@ const ReserveForm = () => {
               ))}
             </select>
           </label>
-          <label>
-            <p>Date</p>
-            <div>
-              <DatePicker
-                selected={startDate}
-                onChange={handleChange}
-                name="startDate"
-                dateFormat="MM/dd/yyyy"
-              />
-            </div>
-          </label>
         </fieldset>
         <button type="submit">Submit</button>
       </form>
     </div>
   );
-};
+}
 export default ReserveForm;
