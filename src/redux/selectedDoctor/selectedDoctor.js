@@ -12,11 +12,9 @@ const selectDocReducer = (state = initial, action) => {
   }
 };
 
-export const selectDoc = (doctors_id) => ({
+export const selectDoc = (doctorId) => ({
   type: SELECTED_DOC,
-  payload: doctors_id,
+  payload: doctorId,
 });
-
-
 
 export default selectDocReducer;
