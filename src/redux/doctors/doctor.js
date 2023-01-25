@@ -47,13 +47,13 @@ export const addDoc = (doctor) => ({
 });
 
 export const addDocThunk = (doctor) => (dispatch) => {
-  axios.defaults.headers.common.Authorization = `Bearer ${'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NzQ1MDkwODB9.X37qH49KPfjQKqlH745Ezw-sycLKUabDymrvaY-zxdM'}`;
+  axios.defaults.headers.common.Authorization = `Bearer ${sessionStorage.getItem('token')}`;
   return axios.post('http://127.0.0.1:3000/doctors',
     {
       name: doctor.name, picture: doctor.picture, speciality: doctor.speciality, bio: doctor.bio,
     })
-    .then(() => {
-      dispatch(addDoc(doctor));
+    .then((response) => {
+      dispatch(addDoc(response.data));
     })
     .catch((error) => {
       console.log(error);
@@ -69,7 +69,7 @@ export const removeDocThunk = (doctor) => (dispatch) => {
   axios.defaults.headers.common.Authorization = `Bearer ${sessionStorage.getItem('token')}`;
   return axios.delete(`http://127.0.0.1:3000//doctors/${doctor.id}`)
     .then(() => {
-      dispatch(removeDoc(doctor));
+      dispatch(removeDoc(doctor.id));
     })
     .catch((error) => {
       console.log(error);
