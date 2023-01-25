@@ -46,10 +46,14 @@ function App() {
   );
 }
 
-const AuthenticatedNavigation = () => (
-  <>
+const AuthenticatedNavigation = () => {
+  return (
+    <>
     <Navigation />
-  </>
-);
+   </>
+  )
+}
+ 
+;
 
 export default App;
