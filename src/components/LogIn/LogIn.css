@@ -7,23 +7,23 @@
   align-items: center;
   justify-content: center;
 }
-  
+
 form {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 2rem;
   border-radius: 1rem;
   text-align: center;
 }
-  
-  input {
+
+input {
   margin: 1rem 0;
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: none;
   font-size: 1.2rem;
 }
-  
-  button {
+
+button {
   background-color: #5e72e4;
   color: white;
   padding: 0.8rem 2rem;
@@ -33,25 +33,25 @@ form {
   cursor: pointer;
   margin-top: 1rem;
 }
-  
-  p {
+
+p {
   font-size: 1.2rem;
   margin-top: 1rem;
   text-align: center;
 }
-  
-  .login-container h1 {
+
+.login-container h1 {
   font-size: 2rem;
   margin-bottom: 2rem;
   text-align: center;
 }
-  
-  .login-container p a {
+
+.login-container p a {
   color: #5e72e4;
   text-decoration: none;
   font-weight: bold;
 }
-  
-  .login-container p a:hover {
+
+.login-container p a:hover {
   text-decoration: underline;
 }

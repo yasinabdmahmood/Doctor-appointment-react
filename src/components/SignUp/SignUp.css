@@ -45,13 +45,13 @@ p {
   margin-bottom: 2rem;
   text-align: center;
 }
-  
+
 .signup-container p a {
   color: #5e72e4;
   text-decoration: none;
   font-weight: bold;
 }
-  
+
 .signup-container p a:hover {
   text-decoration: underline;
 }
