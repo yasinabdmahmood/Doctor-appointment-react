@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useState } from 'react';
@@ -35,32 +36,19 @@ function LogIn() {
   };
 
   return (
-    <>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <label>
-          Email:
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <button type="submit">Log in</button>
+    <div className="login-container">
+      <form onSubmit={handleSubmit}>
+        <h1>Log In</h1>
+        <input type="email" placeholder="Email" required value={formData.email} onChange={handleChange} name="email" />
+        <input type="password" placeholder="Password" required value={formData.password} onChange={handleChange} name="password" />
+        <button type="submit">Log In</button>
+        <p>
+          Don't have an account?
+          {' '}
+          <Link to="/signup">Sign Up</Link>
+        </p>
       </form>
-      <Link to="/signup" type="button" className="btn btn-primary">SignUp</Link>
-    </>
+    </div>
   );
 }
 
