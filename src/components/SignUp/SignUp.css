@@ -1,44 +1,57 @@
-.signup-form {
-  width: 300px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.signup-container {
+  background-image: url("https://media.discordapp.net/attachments/997267581444558878/1067793198866518106/14Characters_1_image_of_a_young_doctor_mid_thirtys_realistic_hi_8a859931-231b-4b4d-af0a-15838d32b7ae.png?width=663&height=663");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.signup-form h2 {
+form {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 1rem;
   text-align: center;
-  margin-bottom: 30px;
 }
 
-.signup-form label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.signup-form input[type="text"],
-.signup-form input[type="email"],
-.signup-form input[type="password"] {
-  width: 100%;
-  padding: 12px 20px;
-  margin-bottom: 20px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-.signup-form input[type="submit"] {
-  width: 100%;
-  background-color: #4caf50;
-  color: white;
-  padding: 14px 20px;
-  margin-top: 20px;
+input {
+  margin: 1rem 0.625rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  font-size: 1.2rem;
 }
 
-.signup-form input[type="submit"]:hover {
-  background-color: #45a049;
+button {
+  background-color: #5e72e4;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.signup-container h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+  
+.signup-container p a {
+  color: #5e72e4;
+  text-decoration: none;
+  font-weight: bold;
+}
+  
+.signup-container p a:hover {
+  text-decoration: underline;
 }
