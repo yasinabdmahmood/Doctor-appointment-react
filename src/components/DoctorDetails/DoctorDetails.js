@@ -6,7 +6,7 @@ import { selectDoc } from '../../redux/selectedDoctor/selectedDoctor';
 import './DoctorDetails.css';
 
 const DoctorDetails = () => {
-  const { id } = useParams();
+  const { id } = useParams(1);
   const doctors = useSelector((state) => state.doctors);
   const dispatch = useDispatch();
   const navigate = useNavigate();

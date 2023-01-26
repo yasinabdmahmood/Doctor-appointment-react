@@ -1,40 +1,45 @@
-import React, { useEffect, useReducer, useState } from 'react';
-// import { DatePicker } from 'react-datepicker';
-// import "react-datepicker/dist/react-datepicker.css";
+import React, { useEffect, useState } from 'react';
+// import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { addDocThunk, fetchDocThunk } from '../../redux/doctors/doctor';
+import { addAppThunk } from '../../redux/appointments/appointment';
+import { fetchDocThunk } from '../../redux/doctors/doctor';
+import './ReserveForm.css';
 
-const formReducer = (state, event) => ({
-  ...state,
-  [event.name]: event.value,
-});
+// const formReducer = (state, event) => ({
+//   ...state,
+//   [event.name]: event.value,
+// });
 
-function ReserveForm() {
-  const [formData, setFormData] = useReducer(formReducer, {});
-  const [submitting, setSubmitting] = useState(false);
-  const doctors = useSelector((state) => state.doctors);
+const ReserveForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const doctors = useSelector((state) => state.doctors);
+  const [formData, setFormData] = useState({
+    city: '',
+    doctor_id: 1,
+    date: '',
+  });
+
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(addAppThunk(formData));
+    navigate('/my-reservations');
+  };
+
+  const [submitting] = useState(false);
+
   useEffect(() => {
     dispatch(fetchDocThunk());
   }, []);
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const doctor = {
-      name: 'doctor.name', picture: 'doctor.picture', speciality: 'doctor.speciality', bio: 'doctor.bio',
-    };
-    dispatch(addDocThunk(doctor));
-    setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-    }, 3000);
-  };
-  const handleChange = (event) => {
-    const isStartDate = event.target.startDate === 'startDate';
-    setFormData({
-      name: event.target.name,
-      value: isStartDate ? event.target.startDate : event.target.value,
-    });
-  };
 
   // const startDate = new Date();
   return (
@@ -59,11 +64,11 @@ function ReserveForm() {
         <fieldset>
           <label>
             <p>City</p>
-            <input name="city" onChange={handleChange} />
+            <input name="city" value={formData.inputText} onChange={handleChange} />
           </label>
           <label>
             <p>Doctor</p>
-            <select name="doctor" onChange={handleChange}>
+            <select name="doctor_id" value={formData.doctor_id} onChange={handleChange}>
               {doctors.map((doctor) => (
                 <option
                   value={doctor.id}
@@ -74,10 +79,16 @@ function ReserveForm() {
               ))}
             </select>
           </label>
+          <label>
+            <p>Date</p>
+            <div>
+              <input type="date" name="date" value={formData.date} onChange={handleChange} />
+            </div>
+          </label>
         </fieldset>
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn btn-primary">Submit</button>
       </form>
     </div>
   );
-}
+};
 export default ReserveForm;
