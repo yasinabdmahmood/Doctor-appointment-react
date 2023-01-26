@@ -63,7 +63,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Loom Video Link - not applicable yet](https://www.loom.com/)
+[Live Demo](https://frolicking-naiad-0868e6.netlify.app/my-reservations)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -77,6 +77,8 @@ git clone https://github.com/yasinabdmahmood/Doctor-appointment-react.git
 cd Doctor-appointment-react
 ls
 ````
+git clone https://github.com/yasinabdmahmood/Doctor-appointment-app-backend.git
+cd Doctor-appointment-app-backend
 
 ### Prerequisites
 
