@@ -22,7 +22,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
 .doctor-name {
@@ -41,17 +40,17 @@
   text-align: right;
 }
 
-.reserveBtn:hover {
-  opacity: 0.8;
-}
-
 .reserveBtn {
   padding: 10px 20px;
-background-color: #16dd1d;
-color: black;
-border: none;
-border-radius: 10px;
-font-size: 1em;
-cursor: pointer;
-width: 30%;
+  background-color: #16dd1d;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  width: 30%;
+}
+
+.reserveBtn:hover {
+  opacity: 0.8;
 }
