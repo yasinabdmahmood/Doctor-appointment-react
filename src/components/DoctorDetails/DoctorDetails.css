@@ -56,7 +56,8 @@
 }
 
 @media (max-width: 600px) {
-  .doctor-thumbnail-container, .doctor-info {
+  .doctor-thumbnail-container,
+  .doctor-info {
     width: 100%;
   }
 }
