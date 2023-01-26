@@ -54,3 +54,9 @@
 .reserveBtn:hover {
   opacity: 0.8;
 }
+
+@media (max-width: 600px) {
+  .doctor-thumbnail-container, .doctor-info {
+    width: 100%;
+  }
+}
