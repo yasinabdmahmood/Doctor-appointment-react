@@ -36,8 +36,8 @@ const DoctorDetails = () => {
           {selectedDoctor.speciality}
         </p>
         <p className="doctor-bio">{selectedDoctor.bio}</p>
+        <button type="button" className="reserveBtn" onClick={handleClick}>Make reservation</button>
       </div>
-      <button type="button" onClick={handleClick}>Make reservation</button>
     </div>
   );
 };
