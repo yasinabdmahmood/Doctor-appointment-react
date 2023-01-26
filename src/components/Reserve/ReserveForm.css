@@ -1,10 +1,25 @@
 .wrapper {
-  margin:5px 20px;
+   margin-right: 85px;
 }
 
 .wrapper fieldset {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  row-gap: 2px;
+  column-gap: 2em;
+  margin-top: 50px;
+  border: 1px solid #e6e6e6;
+  padding: 2em;
+  border-radius: 10px;
+  background: #e6e6e6;
+}
+
+.wrapper button {
+  margin-top: 40px;
+  width: max-content;
+}
+
+.wrapper form {
+  display: flex;
+  margin-top: 40px;
+  flex-direction: column;
 }
