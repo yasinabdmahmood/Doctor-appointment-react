@@ -1,0 +1,57 @@
+.signup-container {
+  background-image: url("https://media.discordapp.net/attachments/997267581444558878/1067793198866518106/14Characters_1_image_of_a_young_doctor_mid_thirtys_realistic_hi_8a859931-231b-4b4d-af0a-15838d32b7ae.png?width=663&height=663");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+input {
+  margin: 1rem 0.625rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.2rem;
+}
+
+button {
+  background-color: #5e72e4;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.signup-container h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.signup-container p a {
+  color: #5e72e4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-container p a:hover {
+  text-decoration: underline;
+}
