@@ -1,0 +1,10 @@
+.wrapper {
+  margin:5px 20px;
+}
+
+.wrapper fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 2px;
+}
