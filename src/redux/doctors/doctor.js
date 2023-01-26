@@ -9,7 +9,6 @@ const doctorReducer = (state = initial, action) => {
   switch (action.type) {
     case FETCH_DOC:
       return [
-        ...state,
         ...action.payload,
       ];
     case ADD_DOC:
