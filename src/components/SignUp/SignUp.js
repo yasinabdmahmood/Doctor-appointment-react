@@ -20,11 +20,11 @@ const SignUp = () => {
     };
 
     axios
-      .post('http://127.0.0.1:3000/users', data)
+      .post('https://doctor-appointment-hbcv.onrender.com/users', data)
       .then(() => {
         const loginData = { email, password };
         axios
-          .post('http://127.0.0.1:3000/auth/login', loginData)
+          .post('https://doctor-appointment-hbcv.onrender.com/auth/login', loginData)
           .then((res) => {
             sessionStorage.setItem('token', res.data.token);
             sessionStorage.setItem('isAdmin', res.data.isAdmin);

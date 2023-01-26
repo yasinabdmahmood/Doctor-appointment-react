@@ -20,7 +20,7 @@ function LogIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post('http://127.0.0.1:3000/auth/login', formData)
+      .post('https://doctor-appointment-hbcv.onrender.com/auth/login', formData)
       .then((response) => {
         sessionStorage.setItem('token', response.data.token);
         sessionStorage.setItem('isAdmin', response.data.isAdmin);
