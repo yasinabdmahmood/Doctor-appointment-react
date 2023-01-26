@@ -37,19 +37,18 @@ const MyReservations = () => {
             // console.log(doctor[0].name)
             // const name = doctor[0].name;
             return (
-              <div key={doctor_id}>
-                <h5>reservations</h5>
-                <p>
+              <div className="reservation-list" key={doctor_id}>
+                <p className="reservation">
                   reservation date:
                   {' '}
                   {date}
                 </p>
-                <p>
+                <p className="reservation">
                   doctor name:
                   {' '}
                   { name }
                 </p>
-                <p>
+                <p className="reservation">
                   doctor city:
                   {' '}
                   {city}
