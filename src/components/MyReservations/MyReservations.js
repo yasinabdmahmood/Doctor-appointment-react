@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+// import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchAppThunk } from '../../redux/appointments/appointment';
 
 const MyReservations = () => {
+  const reservationdatas = useSelector((state) => state.appointments);
+  const doctorsList = useSelector((state) => state.doctors);
   const dispatch = useDispatch();
-  const reservationdatas = useSelector((state) => state.reservationReducer);
-  const userID = 1;
-  const { reservations } = reservationdatas;
-
+  // const { id } = useParams(1);
   useEffect(() => {
-    dispatch(fetchAppThunk(userID));
+    dispatch(fetchAppThunk());
   }, []);
 
   return (
@@ -17,12 +17,13 @@ const MyReservations = () => {
       <h2>My Reservations</h2>
       <ul>
         {
-          reservations[0].map((item) => {
-            const { name, city, date } = item.doctor;
-            const { id } = item.reservation;
+          reservationdatas.map((item) => {
+            const { doctor_id, city, date } = item;
+            const doctor = doctorsList.filter((doctor) => doctor.id === parseInt(id, 10));
+            const name = doctor.name;
             return (
-              <div key={id}>
-                <h5>reservation</h5>
+              <div key={doctor_id}>
+                <h5>reservations</h5>
                 <p>
                   reservation date:
                   {' '}
@@ -31,7 +32,7 @@ const MyReservations = () => {
                 <p>
                   doctor name:
                   {' '}
-                  {name}
+                  { name }
                 </p>
                 <p>
                   doctor city:
