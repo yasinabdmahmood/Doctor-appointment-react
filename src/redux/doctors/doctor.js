@@ -32,7 +32,7 @@ export const fetchDoc = (doctors) => ({
 
 export const fetchDocThunk = () => (dispatch) => {
   axios.defaults.headers.common.Authorization = `Bearer ${sessionStorage.getItem('token')}`;
-  return axios.get('http://127.0.0.1:3000/doctors')
+  return axios.get('https://doctor-appointment-hbcv.onrender.com/doctors')
     .then((response) => {
       dispatch(fetchDoc(response.data));
     })
@@ -48,7 +48,7 @@ export const addDoc = (doctor) => ({
 
 export const addDocThunk = (doctor) => (dispatch) => {
   axios.defaults.headers.common.Authorization = `Bearer ${sessionStorage.getItem('token')}`;
-  return axios.post('http://127.0.0.1:3000/doctors',
+  return axios.post('https://doctor-appointment-hbcv.onrender.com/doctors',
     {
       name: doctor.name, picture: doctor.picture, speciality: doctor.speciality, bio: doctor.bio,
     })
@@ -67,7 +67,7 @@ export const removeDoc = (id) => ({
 
 export const removeDocThunk = (id) => (dispatch) => {
   axios.defaults.headers.common.Authorization = `Bearer ${sessionStorage.getItem('token')}`;
-  return axios.delete(`http://127.0.0.1:3000/doctors/${id}`)
+  return axios.delete(`https://doctor-appointment-hbcv.onrender.com/doctors/${id}`)
     .then(() => {
       dispatch(removeDoc(id));
     })
