@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable import/no-extraneous-dependencies */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Navigation from './components/Navigation/Navigation';
 import DoctorsList from './components/DoctorsList/DoctorsList';
@@ -16,20 +16,17 @@ import './App.css';
 
 function App() {
   const navigate = useNavigate();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     const token = sessionStorage.getItem('token');
-    if (token) {
-      setIsAuthenticated(true);
-    } else {
+    if (!token) {
       navigate('/login');
     }
   }, []);
 
   return (
     <>
-      {isAuthenticated ? <AuthenticatedNavigation /> : null}
+      {sessionStorage.getItem('token') ? <AuthenticatedNavigation /> : null}
       <div className={location.pathname === '/login' || location.pathname === '/signup' ? 'main-container no-margin' : 'main-container'}>
         <Routes>
           <Route path="/" exact element={<DoctorsList />} />
