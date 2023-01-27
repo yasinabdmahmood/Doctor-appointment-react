@@ -63,7 +63,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Live Demo](https://frolicking-naiad-0868e6.netlify.app/my-reservations)
+[Live Demo](https://deft-horse-ba21a0.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
