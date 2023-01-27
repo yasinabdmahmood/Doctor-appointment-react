@@ -1,55 +1,62 @@
 .doctor-details-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: #f5f5f5;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .doctor-thumbnail-container {
-  width: 30%;
-  overflow: hidden;
-  border-radius: 50%;
-  margin-right: 30px;
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .doctor-thumbnail {
-  width: 100%;
-  border-radius: 50%;
+  width: 80%;
+  border-radius: 10%;
 }
 
 .doctor-info {
-  width: 70%;
+  width: 50%;
+  padding: 1rem;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .doctor-name {
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .doctor-speciality {
-  font-style: italic;
-  margin-bottom: 20px;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: right;
 }
 
 .doctor-bio {
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 1.25rem;
+  text-align: right;
 }
 
-@media (max-width: 768px) {
-  .doctor-details-container {
-    flex-wrap: wrap;
-  }
+.reserveBtn {
+  padding: 10px 20px;
+  background-color: #16dd1d;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  width: 30%;
+}
 
-  .doctor-thumbnail-container {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
+.reserveBtn:hover {
+  opacity: 0.8;
+}
 
+@media (max-width: 600px) {
+  .doctor-thumbnail-container,
   .doctor-info {
     width: 100%;
   }

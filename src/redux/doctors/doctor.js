@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import axios from 'axios';
 
 const ADD_DOC = 'doctorApp/doctors/ADD_DOCTOR';
@@ -9,7 +10,6 @@ const doctorReducer = (state = initial, action) => {
   switch (action.type) {
     case FETCH_DOC:
       return [
-        ...state,
         ...action.payload,
       ];
     case ADD_DOC:
@@ -60,16 +60,16 @@ export const addDocThunk = (doctor) => (dispatch) => {
     });
 };
 
-export const removeDoc = (doctor) => ({
+export const removeDoc = (id) => ({
   type: REMOVE_DOC,
-  payload: doctor,
+  payload: id,
 });
 
-export const removeDocThunk = (doctor) => (dispatch) => {
+export const removeDocThunk = (id) => (dispatch) => {
   axios.defaults.headers.common.Authorization = `Bearer ${sessionStorage.getItem('token')}`;
-  return axios.delete(`http://127.0.0.1:3000//doctors/${doctor.id}`)
+  return axios.delete(`http://127.0.0.1:3000/doctors/${id}`)
     .then(() => {
-      dispatch(removeDoc(doctor.id));
+      dispatch(removeDoc(id));
     })
     .catch((error) => {
       console.log(error);

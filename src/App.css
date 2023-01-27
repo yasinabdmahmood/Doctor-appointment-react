@@ -42,6 +42,10 @@
   margin-left: 300px;
 }
 
+.no-margin {
+  margin-left: 0;
+}
+
 @media screen and (max-width: 768px) {
   .main-container {
     margin-left: 0;

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import axios from 'axios';
 
 const ADD_APP = 'doctorApp/appointments/ADD_APPOINTMENT';
@@ -8,7 +9,6 @@ const appointmentReducer = (state = initial, action) => {
   switch (action.type) {
     case FETCH_APP:
       return [
-        ...state,
         ...action.payload,
       ];
     case ADD_APP:
