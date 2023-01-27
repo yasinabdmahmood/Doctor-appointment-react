@@ -15,10 +15,11 @@ import './ReserveForm.css';
 const ReserveForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const selectedDoctor = useSelector((state) => state.selectedDoc);
   const doctors = useSelector((state) => state.doctors);
   const [formData, setFormData] = useState({
     city: '',
-    doctor_id: 1,
+    doctor_id: selectedDoctor || 1,
     date: '',
   });
 
@@ -38,7 +39,9 @@ const ReserveForm = () => {
   const [submitting] = useState(false);
 
   useEffect(() => {
-    dispatch(fetchDocThunk());
+    if (doctors.length === 0) {
+      dispatch(fetchDocThunk());
+    }
   }, []);
 
   // const startDate = new Date();

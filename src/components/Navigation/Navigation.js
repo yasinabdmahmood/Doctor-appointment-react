@@ -16,7 +16,6 @@ const Navigation = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
   const handleResize = () => {
     setWidth(window.innerWidth);
     if (width <= 600) {
