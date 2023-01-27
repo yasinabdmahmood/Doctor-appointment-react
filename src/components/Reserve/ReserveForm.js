@@ -71,7 +71,7 @@ const ReserveForm = () => {
           </label>
           <label>
             <p>Doctor</p>
-            <select name="doctor_id" value={formData.doctor_id} onChange={handleChange}>
+            <select className="form-select select" name="doctor_id" value={formData.doctor_id} onChange={handleChange}>
               {doctors.map((doctor) => (
                 <option
                   value={doctor.id}

@@ -25,7 +25,7 @@ const MyReservations = () => {
 
   return (
     <section className="reservation-wrapper">
-      <h2>My Reservations</h2>
+      <h2 className="text-center">My Reservations</h2>
       <ul>
         {
           reservationdatas.map((item) => {
@@ -33,7 +33,7 @@ const MyReservations = () => {
               doctor_id, city, date, name,
             } = item;
             return (
-              <div className="reservation-list" key={doctor_id}>
+              <div className="card m-5" key={doctor_id}>
                 <p className="reservation">
                   reservation date:
                   {' '}
