@@ -25,7 +25,7 @@ const DoctorsList = () => {
           <div className="col-sm-4" key={doctor.id}>
             <NavLink to={`/doctors/${doctor.id}`} className="list-group-item list-group-item-action text-center">
 
-              <img className="rounded-circle" src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHdvbWFuJTIwZmFjZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=300&q=60" alt="Doctor" width="140" height="140" />
+              <img className="rounded-circle" src={doctor.picture} alt="Doctor" width="140" height="140" />
               <h2>{doctor.name}</h2>
               <p className="border-bottom pb-3 mb-1">{doctor.speciality}</p>
               <p>{doctor.bio}</p>
