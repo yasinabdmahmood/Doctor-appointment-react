@@ -23,7 +23,7 @@ function LogIn() {
       .post('http://127.0.0.1:3000/auth/login', formData)
       .then((response) => {
         sessionStorage.setItem('token', response.data.token);
-        sessionStorage.setItem('isAdmin', response.data.isAdmin);
+        sessionStorage.setItem('isAdmin', response.data.is_admin);
         navigate('/');
       })
       .catch((error) => {

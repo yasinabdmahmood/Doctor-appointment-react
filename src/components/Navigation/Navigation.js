@@ -52,8 +52,13 @@ const Navigation = () => {
         <li className="nav-item"><Link to="/">Doctors</Link></li>
         <li className="nav-item"><Link to="/reserve">Reserve</Link></li>
         <li className="nav-item"><Link to="/my-reservations">My Reservations</Link></li>
-        <li className="nav-item"><Link to="/add-doctor">Add Doctor</Link></li>
-        <li className="nav-item"><Link to="/delete-doctor">Delete Doctor</Link></li>
+        {sessionStorage.getItem('isAdmin') === 'true'
+        && (
+        <>
+          <li className="nav-item"><Link to="/add-doctor">Add Doctor</Link></li>
+          <li className="nav-item"><Link to="/delete-doctor">Delete Doctor</Link></li>
+        </>
+        )}
         <li className="nav-item"><Link to="/login" onClick={handleLogOut}>Log Out</Link></li>
       </ul>
       <div className="sidebar-footer">
