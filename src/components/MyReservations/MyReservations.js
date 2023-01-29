@@ -5,6 +5,10 @@ import { fetchAppThunk } from '../../redux/appointments/appointment';
 import { fetchDocThunk } from '../../redux/doctors/doctor';
 import './MyReservations.css';
 
+function generateUUID() {
+  return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+}
+
 const MyReservations = () => {
   const getDoctorNames = (state) => {
     const { doctors } = state;
@@ -30,10 +34,10 @@ const MyReservations = () => {
         {
           reservationdatas.map((item) => {
             const {
-              doctor_id, city, date, name,
+              city, date, name,
             } = item;
             return (
-              <div className="card m-5" key={doctor_id}>
+              <div className="card m-5" key={generateUUID()}>
                 <p className="reservation">
                   reservation date:
                   {' '}
