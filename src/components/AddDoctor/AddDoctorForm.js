@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addDocThunk } from '../../redux/doctors/doctor';
 
 const AddDoctorForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const initial = {
     name: '',
@@ -25,6 +27,7 @@ const AddDoctorForm = () => {
     e.preventDefault();
     dispatch(addDocThunk(state));
     e.target.reset();
+    navigate('/');
   };
 
   return (
