@@ -28,6 +28,7 @@ function LogIn() {
       })
       .catch((error) => {
         console.log(error);
+        alert('You have entered wrong email or password');
       });
   };
 
