@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 <div align="center">
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
+  <img src="https://user-images.githubusercontent.com/86778388/205303614-88ade5ae-47bf-412a-944d-be2fc6667594.png" alt="logo" width="140"  height="auto" />
   <br/>
   <h3><b>README</b></h3>
   <hr/>
@@ -63,7 +63,8 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Loom Video Link - not applicable yet](https://www.loom.com/)
+- [Live Demo Link For Back-end(Rails)](https://doctor-appointment-hbcv.onrender.com)
+- [Live Demo Link For Front-end(React)](https://deft-horse-ba21a0.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -77,6 +78,8 @@ git clone https://github.com/yasinabdmahmood/Doctor-appointment-react.git
 cd Doctor-appointment-react
 ls
 ````
+git clone https://github.com/yasinabdmahmood/Doctor-appointment-app-backend.git
+cd Doctor-appointment-app-backend
 
 ### Prerequisites
 

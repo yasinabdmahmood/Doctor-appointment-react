@@ -22,4 +22,9 @@
   display: flex;
   margin-top: 40px;
   flex-direction: column;
+  align-items: center;
+}
+
+.select {
+  margin-top: 35px;
 }

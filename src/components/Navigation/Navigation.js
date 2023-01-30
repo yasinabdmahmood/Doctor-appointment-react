@@ -16,7 +16,6 @@ const Navigation = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
   const handleResize = () => {
     setWidth(window.innerWidth);
     if (width <= 600) {
@@ -30,6 +29,9 @@ const Navigation = () => {
     }
   };
 
+  const handleLogOut = () => {
+    sessionStorage.removeItem('token');
+  };
   return (
     <div className={`sidebar ${isOpen ? 'open' : ''}`}>
       <img src={logo} alt="Logo" className="logo" />
@@ -50,8 +52,14 @@ const Navigation = () => {
         <li className="nav-item"><Link to="/">Doctors</Link></li>
         <li className="nav-item"><Link to="/reserve">Reserve</Link></li>
         <li className="nav-item"><Link to="/my-reservations">My Reservations</Link></li>
-        <li className="nav-item"><Link to="/add-doctor">Add Doctor</Link></li>
-        <li className="nav-item"><Link to="/delete-doctor">Delete Doctor</Link></li>
+        {sessionStorage.getItem('isAdmin') === 'true'
+        && (
+        <>
+          <li className="nav-item"><Link to="/add-doctor">Add Doctor</Link></li>
+          <li className="nav-item"><Link to="/delete-doctor">Delete Doctor</Link></li>
+        </>
+        )}
+        <li className="nav-item"><Link to="/login" onClick={handleLogOut}>Log Out</Link></li>
       </ul>
       <div className="sidebar-footer">
         <IconContext.Provider value={{ color: '#98be0f' }}>
