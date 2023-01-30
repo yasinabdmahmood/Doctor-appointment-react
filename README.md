@@ -63,7 +63,8 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Live Demo](https://deft-horse-ba21a0.netlify.app/)
+- [Live Demo Link For Back-end(Rails)](https://doctor-appointment-hbcv.onrender.com)
+- [Live Demo Link For Front-end(React)](https://deft-horse-ba21a0.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
